@@ -9,40 +9,40 @@
  */
 size_t print_listint(const listint_t *h)
 {
-    const listint_t *temp;
-    unsigned int nbr; /* number of nodes */
+    const listint_t *current;
+    unsigned int n; /* number of nodes */
 
-    temp = h;
-    nbr = 0;
-    while (temp != NULL)
+    current = h;
+    n = 0;
+    while (current != NULL)
     {
-        printf("%i\n", temp->num);
-        temp = temp->next;
-        nbr++;
+        printf("%i\n", current->n);
+        current = current->next;
+        n++;
     }
 
-    return (nbr);
+    return (n);
 }
 
 /**
- * add_nodeint - adds a nouv node at the beginning of a listint_t list
+ * add_nodeint - adds a new node at the beginning of a listint_t list
  * @head: pointer to a pointer of the start of the list
  * @n: integer to be included in node
- * Return: address of the nouv element or NULL if it fails
+ * Return: address of the new element or NULL if it fails
  */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-    listint_t *nouv;
+    listint_t *new;
 
-    nouv = malloc(sizeof(listint_t));
-    if (nouv == NULL)
+    new = malloc(sizeof(listint_t));
+    if (new == NULL)
         return (NULL);
 
-    nouv->num = n;
-    nouv->next = *head;
-    *head = nouv;
+    new->n = n;
+    new->next = *head;
+    *head = new;
 
-    return (nouv);
+    return (new);
 }
 
 /**
