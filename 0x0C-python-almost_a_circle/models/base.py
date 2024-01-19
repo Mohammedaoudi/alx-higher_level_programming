@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """base class"""
 
+
 class Base:
     """Base Class definition
 
