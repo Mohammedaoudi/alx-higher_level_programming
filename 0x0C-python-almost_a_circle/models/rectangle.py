@@ -1,18 +1,17 @@
 #!/usr/bin/python3
-"""rectangle class"""
+"""Rectangle class"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """initialization function
-        Attributes:
-        width height and id
-    """
+    """Rectangle class definition"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        """initialization"""
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
         super().__init__(id)
 
     @property
@@ -51,7 +50,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """x setter"""
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -65,7 +64,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """y setter"""
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
