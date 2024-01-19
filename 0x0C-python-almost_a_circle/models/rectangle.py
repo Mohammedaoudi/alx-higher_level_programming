@@ -87,3 +87,12 @@ class Rectangle(Base):
         str_ret += "/" + str(self.__y) + " - "
         str_ret += str(self.__width) + "/" + str(self.__height)
         return (str_ret)
+
+    def update(self, *args, **kwargs):
+        """update methode"""
+        attr = ['id', 'width', 'height', 'x', 'y']
+        for i in range(len(args)):
+            setattr(self, attr[i], args[i])
+        if args is None or len(args) == 0:
+            for cle, val in kwargs.items():
+                setattr(self, cle, val)
