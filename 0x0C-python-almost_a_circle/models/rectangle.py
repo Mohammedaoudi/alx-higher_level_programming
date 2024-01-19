@@ -81,4 +81,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """__str__ methode"""
-        return ("[Rectangle] (" + str(self.id) + ") " + str(self.__x) + "/" + str(self.__y) + " - " + str(self.__width) + "/" + str(self.__height))
+        str_ret = "[Rectangle] (" + str(self.id) + ") " + str(self.__x)
+        str_ret += "/" + str(self.__y) + " - "
+        str_ret += str(self.__width) + "/" + str(self.__height)
+        return (str_ret)
