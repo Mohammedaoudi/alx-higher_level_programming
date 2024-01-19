@@ -96,3 +96,11 @@ class Rectangle(Base):
         if args is None or len(args) == 0:
             for cle, val in kwargs.items():
                 setattr(self, cle, val)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle"""
+        my_dic = {}
+        attr = ['id', 'size', 'x', 'y']
+        for key in attr:
+            my_dic[key] = getattr(self, key)
+        return (my_dic)
