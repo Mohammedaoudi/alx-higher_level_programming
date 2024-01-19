@@ -78,3 +78,7 @@ class Rectangle(Base):
         """display func"""
         for i in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """__str__ methode"""
+        return ("[Rectangle] (" + str(self.id) + ") " + str(self.__x) + "/" + str(self.__y) + " - " + str(self.__width) + "/" + str(self.__height))
