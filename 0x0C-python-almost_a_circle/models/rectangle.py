@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """rectangle class"""
+from models.base import Base
 
 
 class Rectangle(Base):
